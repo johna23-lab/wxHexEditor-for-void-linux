@@ -1,0 +1,18 @@
+# Template file for 'wxHexEditor'
+pkgname=wxhexditor
+version=0.25
+revision=1
+wrksrc=wxHexEditor-master
+build_style=gnu-makefile
+hostmakedepends="tar libpng-devel binutils-devel patch gdk-pixbuf-devel pango-devel automake autoconf libtool wxWidgets-common pkg-config wxWidgets-gtk3-devel"
+makedepends="python gettext libgomp-devel zlib-devel wxWidgets-gtk3-devel"
+short_desc="wxHexEditor is another Free Hex Editor, build because there is no good hex editor for Linux system, specially for big files."
+maintainer="JOHNA23-LAB"
+license="GPL-2.0-or-later"
+homepage="https://github.com/EUA/wxHexEditore"
+distfiles="https://github.com/EUA/wxHexEditor/archive/refs/heads/master.zip"
+checksum=8da9bd18a976908db02f30633b339aba035262d1514180c4329f623adb104846
+
+do_install() {
+    make DESTDIR=${DESTDIR} install
+}
